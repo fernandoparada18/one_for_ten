@@ -15,7 +15,6 @@ class CreatePatrolsTable extends Migration
     {
         Schema::create('patrols', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->increments('id');
             $table->string('name');
             $table->string('id_card');
             $table->text('address');
