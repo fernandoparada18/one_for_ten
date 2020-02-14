@@ -29,8 +29,8 @@
 </div>
 
 <hr>
-<h2>Agregar Información de 3 o más amigos Dominicanos</h2>
-<hr>
+	<h2><center>Agregar Información de 3 o más amigos Dominicanos</center></h2>
+ <hr width=50%  align="center"  size=10   noshade="noshade" color="#FF0000">
 
 <div class="row">	
     <div class="col-sm-2">

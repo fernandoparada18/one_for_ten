@@ -58,7 +58,7 @@ class ChiefController extends AppBaseController
 
         $chief = $this->chiefRepository->create($input);
 
-        Flash::success('Chief saved successfully.');
+        Flash::success('Registro almacenado Correctamente.');
 
         return redirect(route('chiefs.index'));
     }
@@ -75,7 +75,7 @@ class ChiefController extends AppBaseController
         $chief = $this->chiefRepository->find($id);
 
         if (empty($chief)) {
-            Flash::error('Chief not found');
+            Flash::error('No se encuentra este registro');
 
             return redirect(route('chiefs.index'));
         }
@@ -95,7 +95,7 @@ class ChiefController extends AppBaseController
         $chief = $this->chiefRepository->find($id);
 
         if (empty($chief)) {
-            Flash::error('Chief not found');
+            Flash::error('No se encuentra este registro');
 
             return redirect(route('chiefs.index'));
         }
@@ -116,14 +116,14 @@ class ChiefController extends AppBaseController
         $chief = $this->chiefRepository->find($id);
 
         if (empty($chief)) {
-            Flash::error('Chief not found');
+            Flash::error('No se encuentra este registro');
 
             return redirect(route('chiefs.index'));
         }
 
         $chief = $this->chiefRepository->update($request->all(), $id);
 
-        Flash::success('Chief updated successfully.');
+        Flash::success('Registro Actualizado Correctamente.');
 
         return redirect(route('chiefs.index'));
     }
@@ -142,14 +142,14 @@ class ChiefController extends AppBaseController
         $chief = $this->chiefRepository->find($id);
 
         if (empty($chief)) {
-            Flash::error('Chief not found');
+            Flash::error('No se encuentra este registro');
 
             return redirect(route('chiefs.index'));
         }
 
         $this->chiefRepository->delete($id);
 
-        Flash::success('Chief deleted successfully.');
+        Flash::success('Registro Eliminado Correctamente.');
 
         return redirect(route('chiefs.index'));
     }
