@@ -29,7 +29,7 @@
 </div>
 
 <hr>
-<h2>1X10</h2>
+<h2>Agregar Información de 3 o más amigos Dominicanos</h2>
 <hr>
 
 <div class="row">	
@@ -37,13 +37,13 @@
         <input class="form-control" type="text" placeholder="Nombre Completo"/>
     </div>
     <div class="col-sm-2">
-        <input class="form-control" type="text" placeholder="Cedula"/>
+        <input class="form-control" type="text" placeholder="Cédula"/>
     </div>
     <div class="col-sm-3">
-        <input class="form-control" type="text" placeholder="Direccón"/>
+        <input class="form-control" type="text" placeholder="Dirección"/>
     </div>
     <div class="col-sm-2">
-        <input class="form-control" type="text" placeholder="Telefono"/>
+        <input class="form-control" type="text" placeholder="Teléfono"/>
     </div>
     <div class="col-sm-2">
         <input class="form-control" type="email" placeholder="Correo"/>
@@ -60,9 +60,9 @@
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Cedula</th>
+                <th>Cédula</th>
                 <th>Dirección</th>
-                <th>Telefono</th>
+                <th>Teléfono</th>
                 <th>Correo</th>
             </tr>
         </thead>

@@ -31,7 +31,7 @@
             }
 
             .position-ref {
-                position: relative;
+                position: right;
             }
 
             .top-right {
@@ -45,7 +45,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 35px;				
             }
 
             .links > a {
@@ -53,13 +53,21 @@
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
-                letter-spacing: .1rem;
+                letter-spacing: .10rem;
                 text-decoration: none;
                 text-transform: uppercase;
-            }
+			}
+            .links > p {
+                padding: 0 25px;
+                font-size: 15px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+			}
 
             .m-b-md {
                 margin-bottom: 30px;
+				color:blue;
             }
         </style>
     </head>
@@ -68,32 +76,33 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">Inicio</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Ingresar</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">Registrarse</a>
                         @endif
                     @endauth
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+            
+			<div class="content">
+				<div class="box box-primary">
+					<div class="box-body">
+						<div class="row">
+							<div class="title m-b-md">
+								<strong>VENEZOLANOS EN RD</strong>
+							</div>
+							<div class="links">
+								<p>Registro De Venezolanos para Permiso Temporal de Permanencia (PTP)</p>							
+							</div>
+								<p>Este Registro es un plan que se está diseñando para Regularización por 1 año, solo debe ingresar la información de Contacto de 3 o más amigos Dominicanos</p>
+						</div>
+					</div>
+				</div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
             </div>
         </div>
     </body>
