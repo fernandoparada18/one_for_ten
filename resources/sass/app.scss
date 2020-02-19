@@ -1,1 +1,23 @@
-//
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+//Font awesome
+@import "~font-awesome/scss/font-awesome";
+
+//Ionicons
+@import "~ionicons/dist/scss/ionicons";
+
+// Toastr
+@import "~toastr/toastr.scss";
+
+#app,
+.container {
+    width: 100%;
+    height: 100%;
+}
