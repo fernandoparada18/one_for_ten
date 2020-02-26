@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class PatrolRepository
  * @package App\Repositories
- * @version February 10, 2020, 12:41 pm UTC
+ * @version February 26, 2020, 2:17 pm UTC
 */
 
 class PatrolRepository extends BaseRepository
@@ -21,7 +21,8 @@ class PatrolRepository extends BaseRepository
         'id_card',
         'address',
         'phone',
-        'email'
+        'email',
+        'chief_id'
     ];
 
     /**

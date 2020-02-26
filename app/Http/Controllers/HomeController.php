@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Chief;
+use App\Models\Patrol;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $chief = Chief::count();
+        $approved = Chief::where('approved', true)->count();
+        $new = Chief::where('approved', false)->count();
+        $patrols = Patrol::count();
+        return view('home', compact('chief', 'approved', 'new', 'patrols'));
     }
 }
