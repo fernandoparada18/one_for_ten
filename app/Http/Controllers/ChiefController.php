@@ -29,7 +29,7 @@ class ChiefController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $chiefs = $this->chiefRepository->all();
+        $chiefs = $this->chiefRepository->all()->sortByDesc('id');
 
         return view('chiefs.index')
             ->with('chiefs', $chiefs);
@@ -150,6 +150,23 @@ class ChiefController extends AppBaseController
         $this->chiefRepository->delete($id);
 
         Flash::success('Registro Eliminado Correctamente.');
+
+        return redirect(route('chiefs.index'));
+    }
+
+    public function approved($id)
+    {
+        $chief = $this->chiefRepository->find($id);
+
+        if (empty($chief)) {
+            Flash::error('No se encuentra este registro');
+
+            return redirect(route('chiefs.index'));
+        }
+
+        $chief = $this->chiefRepository->update(['approved' => true], $id);
+
+        Flash::success('Registro Aprobado.');
 
         return redirect(route('chiefs.index'));
     }

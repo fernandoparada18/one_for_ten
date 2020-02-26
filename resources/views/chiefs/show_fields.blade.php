@@ -40,3 +40,32 @@
     <p>{{ $chief->updated_at }}</p>
 </div>
 
+<hr>
+	<h1><center>Amigos mayores de edad</center></h1>
+<hr>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+				<th>Cédula</th>
+                <th>Nombre</th>               
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($chief->patrols as $item)
+            <tr>
+				<td>{{ $item->id_card }}</td>
+                <td>{{ $item->name }}</td>               
+                <td>{{ $item->address }}</td>
+                <td>{{ $item->phone }}</td>
+                <td>{{ $item->email }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+

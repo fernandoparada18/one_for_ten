@@ -21,5 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 
 
 Route::resource('chiefs', 'ChiefController');
+Route::get('/chiefs/{id}/approved', 'ChiefController@approved')->name('chiefs.approved');
 
 Route::resource('patrols', 'PatrolController');

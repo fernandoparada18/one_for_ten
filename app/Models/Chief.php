@@ -33,7 +33,9 @@ class Chief extends Model
         'id_card',
         'address',
         'phone',
-        'email'
+        'email',
+        'user_id',
+        'approved'
     ];
 
     /**

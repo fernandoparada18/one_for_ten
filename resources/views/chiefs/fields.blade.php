@@ -28,52 +28,13 @@
     {!! Form::email('email', null, ['class' => 'form-control']) !!}
 </div>
 
-<hr>
-	<h1><center>Agregar Información de 3 o más amigos Dominicanos que usted conozca mayores de edad</center></h1>
-<hr>
-
-<div class="row">	
-    <div class="col-sm-2">
-        <input class="form-control" type="text" placeholder="Cédula"/>
-    </div>
-    <div class="col-sm-2">
-        <input class="form-control" type="text" placeholder="Nombre Completo"/>
-    </div>
-    <div class="col-sm-3">
-        <input class="form-control" type="text" placeholder="Dirección"/>
-    </div>
-    <div class="col-sm-2">
-        <input class="form-control" type="text" placeholder="Teléfono"/>
-    </div>
-    <div class="col-sm-2">
-        <input class="form-control" type="email" placeholder="Correo"/>
-    </div>
-    <div class="col-sm-1">
-        <button class="btn btn-primary form-control" data-toggle="tooltip" data-placement="top" title="Añadir">
-            <i class="glyphicon glyphicon-plus"></i>
-        </button>
-    </div>
-</div>
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-				<th>Cédula</th>
-                <th>Nombre</th>               
-                <th>Dirección</th>
-                <th>Teléfono</th>
-                <th>Correo</th>
-            </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
-</div>
-
-
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
+    @if(auth()->user()->type == 'admin')
     <a href="{{ route('chiefs.index') }}" class="btn btn-default">Cancelar</a>
+    @endif
+    @if(auth()->user()->type == 'standar')
+    <a href="{{ route('home') }}" class="btn btn-default">Cancelar</a>
+    @endif
 </div>
