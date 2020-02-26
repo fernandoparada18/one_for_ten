@@ -17,9 +17,12 @@ class CreateChiefsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('id_card');
-            $table->text('address');
-            $table->string('phone');
+            $table->text('address')->nullable();
+            $table->string('phone')->nullable();
             $table->string('email');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->boolean('approved')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });

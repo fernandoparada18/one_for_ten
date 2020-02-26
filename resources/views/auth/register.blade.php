@@ -55,6 +55,17 @@
                 @endif
             </div>
 
+            <div class="form-group has-feedback{{ $errors->has('id_card') ? ' has-error' : '' }}">
+                <input type="text" class="form-control" name="id_card" value="{{ old('id_card') }}" placeholder="Cedula">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+                @if ($errors->has('id_card'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('id_card') }}</strong>
+                    </span>
+                @endif
+            </div>
+
             <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
                 <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Correo">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

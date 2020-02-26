@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Models\Chief;
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -52,6 +54,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'id_card' => ['required', 'string', 'min:7'],
         ]);
     }
 
@@ -63,10 +66,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'type' => 'standar',
         ]);
+
+        Chief::create([
+            'name' => $data['name'],
+            'id_card' => $data['id_card'],
+            'email' => $data['email'],
+            'user_id' => $user->id,
+        ]);
+
+        return $user;
     }
+    
 }
