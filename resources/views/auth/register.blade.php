@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AMIGOS VEN-RD | Página de Registro</title>
+    <title>{{ config('app.name') }} | Registro de Movilizador</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -30,15 +30,28 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+        .login-page-image {
+            align-items: center;
+            background-image: url('images/fondo.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="{{ url('/home') }}"><b>AMIGOS </b>VEN-RD</a>
+        <a href="{{ url('/home') }}"><b>Registro </b>Movilizador</a>
     </div>
 
     <div class="register-box-body">
-        <p class="login-box-msg">Registrar un nuevo Usuario</p>
+        <p class="login-box-msg">Registrar un Nuevo Movilizador</p>
 
         <form method="post" action="{{ url('/register') }}">
 
@@ -100,22 +113,23 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-8">
+                <div class="col-xs-12">
                     <div class="checkbox icheck">
                         <label>
-                            <input type="checkbox"> Acepto los <a href="#">Términos</a>
+                            <input type="checkbox"> Declaro que los datos suministrados son verdaderos.
                         </label>
                     </div>
                 </div>
                 <!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Registrar</button>
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                    <a href="{{ url('/login') }}" class="btn btn-link btn-block">Ya estoy registrado</a>
                 </div>
                 <!-- /.col -->
             </div>
         </form>
 
-        <a href="{{ url('/login') }}" class="text-center">Ya estoy Registrado</a>
+        
     </div>
     <!-- /.form-box -->
 </div>

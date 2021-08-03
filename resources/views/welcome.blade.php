@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>SISTEMA DE MOVILIZACIÓN ELECTORAL</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -30,6 +30,17 @@
                 justify-content: center;
             }
 
+            .login-page-image {
+                align-items: center;
+                background-image: url('images/fondo.jpg');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                justify-content: center;
+            }
+
             .position-ref {
                 position: right;
             }
@@ -45,7 +56,7 @@
             }
 
             .title {
-                font-size: 35px;				
+                font-size: 40px;				
             }
 
             .links > a {
@@ -64,14 +75,9 @@
                 letter-spacing: .1rem;
                 text-decoration: none;
 			}
-
-            .m-b-md {
-                margin-bottom: 30px;
-				color:blue;
-            }
         </style>
     </head>
-    <body>
+    <body class="login-page-image">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -86,19 +92,16 @@
                     @endauth
                 </div>
             @endif
-
             
 			<div class="content">
 				<div class="box box-primary">
 					<div class="box-body">
 						<div class="row">
-							<div class="title m-b-md">
-								<strong>VENEZOLANOS EN RD</strong>
+							<div class="title">
+								<strong>SISTEMA DE MOVILIZACIÓN ELECTORAL</strong>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>
 							</div>
-							<div class="links">
-								<p>Registro De Venezolanos para Permiso Temporal de Permanencia (PTP)</p>							
-							</div>
-								<p>Este Registro es un plan que se está diseñando para Regularización por 1 año, solo debe ingresar la información de Contacto de 3 o más amigos Dominicanos</p>
 						</div>
 					</div>
 				</div>

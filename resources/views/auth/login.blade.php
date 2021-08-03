@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>InfyOm Laravel Generator</title>
+    <title>{{ config('app.name') }} | Inicio de sesión</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -31,16 +31,28 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        .login-page-image {
+            align-items: center;
+            background-image: url('images/fondo.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+        }
+    </style>
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page-image">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>AMIGOS </b>VEN-RD</a>
+        <a href="{{ url('/home') }}"><b> </b>&nbsp;</a>
     </div>
 
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Inicia Sesión para comenzar</p>
+        <p class="login-box-msg">Inicia sesión para comenzar</p>
 
         <form method="post" action="{{ url('/login') }}">
             {!! csrf_field() !!}
@@ -56,7 +68,7 @@
             </div>
 
             <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                <input type="password" class="form-control" placeholder="Clave" name="password">
+                <input type="password" class="form-control" placeholder="Contraseña" name="password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 @if ($errors->has('password'))
                     <span class="help-block">
@@ -81,8 +93,9 @@
             </div>
         </form>
 
-        <a href="{{ url('/password/reset') }}">He olvidado mi clave</a><br>
-        <a href="{{ url('/register') }}" class="text-center">Registrarse</a>
+        <a href="{{ url('/password/reset') }}">He olvidado mi contraseña</a><br>
+        <br>
+        <a href="{{ url('/register') }}" class="btn btn-danger btn-block">Registrarse</a>
 
     </div>
     <!-- /.login-box-body -->

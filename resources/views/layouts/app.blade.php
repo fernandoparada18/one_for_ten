@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
-    <title>AMIGOS VEN-RD</title>
+    <title>{{ config('app.name') }} | @yield('title', 'Sistema de Movilización Electoral')</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <!-- Bootstrap 3.3.7 -->
@@ -27,15 +27,18 @@
     @yield('css')
 </head>
 
-<body class="skin-blue sidebar-mini">
-@if (!Auth::guest())
+<body class="skin-red sidebar-mini">
     <div class="wrapper">
         <!-- Main Header -->
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="{{ asset('images/banderas150.png') }}" class="logo">
-                <b><small>AMIGOS</small></b>
+            <a href="{{ asset('images/users/default.jpg') }}" class="logo">
+                <!--  mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>{{ config('app.name') }}</b></span>
+
+                <!-- logo for regular state and mobile devices --> 
+                <span class="logo-lg"><b>Movilización</b>{{ config('app.name') }}</span>
             </a>
 
             <!-- Header Navbar -->
@@ -52,7 +55,7 @@
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="{{ asset('images/banderas150.png') }}"
+                                <img src="{{ asset('images/users/default.jpg') }}"
                                      class="user-image" alt="User Image"/>
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs">{!! Auth::user()->name !!}</span>
@@ -60,7 +63,7 @@
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="{{ asset('images/banderas150.png') }}"
+                                    <img src="{{ asset('images/users/default.jpg') }}"
                                          class="img-circle" alt="User Image"/>
                                     <p>
                                         {!! Auth::user()->name !!}
@@ -98,56 +101,9 @@
 
         <!-- Main Footer -->
         <footer class="main-footer" style="max-height: 100px;text-align: center">
-            <strong>Copyright © {{date('Y')}} Ing. Nestor Serrano <a href="tel:+18296399877">+18296399877</a>.</strong> Todos los Derechos Reservados.
+            <strong>Copyright © {{date('Y')}} Ing. Fernando Parada <a href="tel:+584144023868">+584144023868</a>.</strong> Todos los Derechos Reservados.
         </footer>
-
     </div>
-@else
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
-
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{!! url('/') !!}">
-                    AMIGOS VEN-RD
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{!! url('/home') !!}">Inicio/a></li>
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    <li><a href="{!! url('/login') !!}">Entrar</a></li>
-                    <li><a href="{!! url('/register') !!}">Registro</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    @yield('content')
-                </div>
-            </div>
-        </div>
-    </div>
-    @endif
 
     <!-- jQuery 3.1.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
